@@ -43,7 +43,15 @@ volatile int lap_ticks_count;
 
 
 
+/*===============================
+=            Helpers            =
+===============================*/
 
+int len(int inputarray[]) {
+	return sizeof(inputarray) / sizeof(int);
+}
+
+/*=====  End of Helpers  ======*/
 
 
 
@@ -54,9 +62,8 @@ volatile int lap_ticks_count;
 
 /*----------  Events  ----------*/
 void encoder_tick_event() {
+	ticks_times_buffer[lap_ticks_count] = millis() - lap_start_time;
 	lap_ticks_count++;
-
-	ticks_times_buffer.append(millis() - lap_start_time);
 }
 
 /*----------  Communication  ----------*/
@@ -101,8 +108,8 @@ void analyse() {
 		int last_t = ticks_times_buffer[measures_last_tick_shortbuffer[i]];
 
 		int d = measuredists_shortbuffer[i];
-		int a = int((t - last_t) / (ticks_times_buffer[measures_last_ticks_shortbuffer[i+ 1]] - last_t) 
-					+ measures_last_ticks_shortbuffer[i] * ANGLE_PER_TICK);
+		int a = int((t - last_t) / (ticks_times_buffer[measures_last_tick_shortbuffer[i+ 1]] - last_t) 
+					+ measures_last_tick_shortbuffer[i] * ANGLE_PER_TICK);
 						/*
 						 *                 t      - last_t
 						 * Angle formula : ---------------  +  last_tick_index * ANGLE_PER_TICK
@@ -159,7 +166,7 @@ void loop() {
 		}
 	}
 
-	if(ticks_count > TICKS_PER_LAP) new_lap();
+	if(lap_ticks_count > TICKS_PER_LAP) new_lap();
 
 
 	serial_send();
@@ -168,13 +175,3 @@ void loop() {
 }
 
 /*=====  End of Setup & Loop  ======*/
-
-
-
-/*===============================
-=            Helpers            =
-===============================*/
-
-
-
-/*=====  End of Helpers  ======*/
