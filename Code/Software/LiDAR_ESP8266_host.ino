@@ -7,8 +7,7 @@
 
 /*----------  Global  ----------*/
 #define BATCH_SIZE 15         // Number of measures before sending them
-#define ANGLE_PER_TICK 0.1    // Degrees
-#define TICKS_PER_LAP 3 * 30 * 2     // TODO define ?
+#define TICKS_PER_LAP 177     
 #define FASTMODE_SPEED 255    // Motor speed when in slow scanning rate mode.
 #define SLOWMODE_SPEED 80     // Motor speed when in fast scanning rate mode.
 
@@ -18,7 +17,7 @@ unsigned long lap_start_time; // Let the buffers keep smaller values by substrac
 
 /*----------  Pin Definitions  ----------*/
 #define PIN_LED LED_BUILTIN
-#define PIN_MOTOR_SPEED 0
+#define PIN_MOTOR_PWM 0
 #define PIN_ENCODER_INPUT A0
 
 /*----------  Global buffers  ----------*/
@@ -38,6 +37,8 @@ const int LidarMode = 1; //See example DistanceToi2c from LidarLite to test Lida
 int motor_speed;
 volatile int lap_ticks_count;
 
+/*----------  System  ----------*/
+#define ANGLE_PER_TICK 360 / TICKS_PER_LAP
 
 /*========  End of VARIABLES  =========*/
 
