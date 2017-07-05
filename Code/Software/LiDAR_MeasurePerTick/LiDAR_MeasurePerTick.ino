@@ -13,6 +13,8 @@ volatile int lap_tick_count;
 volatile bool bool_got_tick = false;
 volatile bool bool_new_lap = false;
 
+bool reset = false; //if the host asks for a reset.
+
 LIDARLite LidarLite;
 const int LidarMode = 1; //See example DistanceToi2c from LidarLite library to test Lidar modes.
 
@@ -33,6 +35,21 @@ void encoder_tick() {
 		new_lap(false);
 	}
 }
+void check_serial_read() {
+  if(Serial.available()) {
+    char c = Serial.read();
+    switch(c) {
+      case 'R': //RESET
+        new_lap(true);
+        reset = true;
+        break;
+      case 'P': //GET PPL. The host asks for the angular resolution of the lidar. Reply with the result.
+        Serial.print("P");
+        Serial.println(TICKS_PER_LAP + 1);
+        break;
+    }
+  }
+}
 
 void setup() {
 	Serial.begin(500000);
@@ -48,27 +65,24 @@ void setup() {
 }
 
 void loop() {
+  if(reset) { Serial.println("RESET"); reset = false; } //Send 'RESET' and end line to start fresh (the host will receive 'xxxxxxxxxxRESET\n').
   
   if(bool_new_lap) {
-    Serial.flush();
+    Serial.println();
     Serial.print("L");
     Serial.print(LapCount);
-    if(LapCount == 0) {
-      Serial.print("-");
-
-      Serial.print(TICKS_PER_LAP);
-    }
-    Serial.println(":");
+    Serial.print(":");
 
     bool_new_lap = false;
   }
   if(bool_got_tick) {
     Serial.print(LidarLite.distance(bool_new_lap));
-    Serial.print('\n');
+    Serial.print(',');
     bool_got_tick = false;
     bool_new_lap = false;
   }
 
+  check_serial_read();
 
   if(Serial.availableForWrite() < 5) Serial.println("TX BUFFER OVERFLOW"); //DEBUG
 }

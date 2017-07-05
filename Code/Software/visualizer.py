@@ -4,56 +4,48 @@ from serial_manager import *
 
 
 
-def update_points(points, new_points):
-	if new_points is not None:
-		for p in new_points:
-			points.insert(0, p)
-		try:
-			del points[360:]
-		except:
-			print("EXCEPTION")
-			pass
-
-		return points
-	else:
-		return points
-
-
-
 
 pygame.init()
 clock = pygame.time.Clock()
 
-WindowRes = (800, 600)
+WindowRes = (1440, 1440)
 window = pygame.display.set_mode(WindowRes)
 pygame.display.set_caption("LIDAR Cloud POV")
 
 renderer = Renderer(WindowRes)
-serial = SerialManager("/dev/ttyUSB0", 500000)
-serial.openSerial()
+communication = SerialManager("/dev/ttyUSB0", 500000)
+communication.openSerial()
 
-points = []
+PointsPerLap = communication.getPointsPerLap()
+print("Got PPL = " + str(PointsPerLap))
+lapsStack = LapsStack(PointsPerLap)
+
+communication.resetLidar()
+
 
 running = True
 while running:
 	events = pygame.event.get()
-	for event in events:
+	for event in events: # quitting the program
 		if event.type == pygame.QUIT:
 			running = False
-
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+			running = False
 	window.fill((0, 0, 0))
 
-	serial_update = serial.getSerialInput()
-	#points = points if serial_update == None else serial_update
-	points = update_points(points, serial_update)
-	
-	renderer.Draw(window, points)
 
+
+
+	serial_update = communication.updateSerial(lapsStack = lapsStack)
+	
+	renderer.Draw(window, lapsStack.getLatestLap())
 	pygame.display.update()
 	clock.tick(20)
 
+
+
 pygame.quit()
-serial.closeSerial()
+communication.closeSerial()
 quit()
 
 
