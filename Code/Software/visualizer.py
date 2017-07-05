@@ -29,7 +29,7 @@ window = pygame.display.set_mode(WindowRes)
 pygame.display.set_caption("LIDAR Cloud POV")
 
 renderer = Renderer(WindowRes)
-serial = SerialManager("COM6", 115200)
+serial = SerialManager("/dev/ttyUSB0", 500000)
 serial.openSerial()
 
 points = []
