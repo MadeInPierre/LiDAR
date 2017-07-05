@@ -1,11 +1,15 @@
 #include <Wire.h>
 #include <LIDARLite.h>
 
-#define TICKS_PER_LAP 176
-#define ANGLE_PER_TICK 360 / TICKS_PER_LAP
+/*Different scanning modes are possible :
+    - 0 : SLOW. 2 degrees angular resolution, max 1.2Hz but more precise (+- 3cm)
+    - 1 : FAST. 1 degree  angular resolution, max 3Hz   but less precise (+- 6cm)
+*/
+#define MODE 0
+
+#define TICKS_PER_LAP 176 * (1 + MODE) //176 ticks if slow mode (detects only rising ticks, 354 otherwise (rising + falling)
 
 #define PIN_LED LED_BUILTIN
-#define PIN_MOTOR_PWM 0
 #define PIN_ENCODER_INPUT D3
 
 volatile int LapCount;
@@ -14,9 +18,10 @@ volatile bool bool_got_tick = false;
 volatile bool bool_new_lap = false;
 
 bool reset = false; //if the host asks for a reset.
+volatile bool recalibrate_lidar = true;
 
 LIDARLite LidarLite;
-const int LidarMode = 2; //See example DistanceToi2c from LidarLite library to test Lidar modes.
+const int LidarMode = 1; //See example DistanceToi2c from LidarLite library to test Lidar modes.
 
 void new_lap(bool reset) {
   // Resets the counter for a new lap. Sends a new lap header (flag for the loop).
@@ -24,6 +29,7 @@ void new_lap(bool reset) {
   LapCount = reset ? 0 : LapCount + 1;
   lap_tick_count = 0;
   bool_new_lap = true;
+  recalibrate_lidar = true;
 }
 
 void encoder_tick() {
@@ -54,13 +60,18 @@ void check_serial_read() {
 void setup() {
 	Serial.begin(500000);
 	pinMode(PIN_LED, OUTPUT);
-	pinMode(PIN_MOTOR_PWM, OUTPUT);
 	pinMode(PIN_ENCODER_INPUT, INPUT);
 
+  // Configuring lidar to 
 	LidarLite.begin(LidarMode, true);
 	LidarLite.configure(LidarMode);
+  if(MODE == 1) LidarLite.write(0x02, 0x0d);       // Maximum acquisition count of 0x0d. (default is 0x80)
+                //LidarLite.write(0x04, 0b00000100); // Use non-default reference acquisition count
+                //LidarLite.write(0x12, 0x03);     // Reference acquisition count of 3 (default is 5)
+  delay(10);
 
-	attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, RISING);
+	if(MODE == 0) attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, RISING);
+  if(MODE == 1) attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, CHANGE);
 	new_lap(true);
 }
 
@@ -68,7 +79,7 @@ void loop() {
   if(reset) { Serial.println("RESET"); reset = false; } //Send 'RESET' and end line to start fresh (the host will receive 'xxxxxxxxxxRESET\n').
   
   if(bool_new_lap) {
-    Serial.println(); Serial.println(); Serial.println();
+    Serial.println();
     Serial.print("L");
     Serial.print(LapCount);
     Serial.print(":");
@@ -76,13 +87,14 @@ void loop() {
     bool_new_lap = false;
   }
   if(bool_got_tick) {
-    Serial.print(LidarLite.distance(bool_new_lap));
+    Serial.print(LidarLite.distance(recalibrate_lidar));
     Serial.print(',');
     bool_got_tick = false;
-    bool_new_lap = false;
+    recalibrate_lidar = false;
   }
 
   check_serial_read();
 
-  if(Serial.availableForWrite() < 5) Serial.println("TX BUFFER OVERFLOW"); //DEBUG
+  if(Serial.availableForWrite() < 10) digitalWrite(PIN_LED, LOW); //DEBUG
+  else digitalWrite(PIN_LED, HIGH);
 }

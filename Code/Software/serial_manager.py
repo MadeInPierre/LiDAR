@@ -30,18 +30,18 @@ class SerialParser():
 
 
 			# Create a lap with this data
-			if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
-				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
-			else:
-				print("[WARNING] Too many points, discarted the lap.")
-				print "Discarted data = " + data
+			#if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
+			lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
+			#else:
+			#	print("[WARNING] Too many points, discarted the lap.")
+			#	print "Discarted data = " + data
 		elif data[0] == 'L' and data[-1] != '\n':
 			print("[WARNING] Received non full-lap message from lidar")
 		elif 'P' in data and data[-1] == '\n':
 			# The Lidar just gave the angular resolution (PointsPerLap) in format 'P176\n'.
 			return int(data[data.index('P') + 1:])
 		else:
-			print("[WARNING] MESSAGE NOT RECOGNIZED")
+			print("[NOT_RECOGNIZED] >>> " + data)
 			return False
 
 

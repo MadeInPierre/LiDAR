@@ -4,7 +4,7 @@ import time
 class Renderer():
 	def __init__(self, WindowRes):
 		self.WindowRes = WindowRes
-		self.MAXRANGE = 500 # max range to be drawn in cm
+		self.MAXRANGE = 1000 # max range to be drawn in cm
 		self.PRECISION_LIMIT = 50
 
 		self.screencenter = (self.WindowRes[0] / 2, self.WindowRes[1] / 2)
