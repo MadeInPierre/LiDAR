@@ -5,7 +5,7 @@ class Renderer():
 	def __init__(self, WindowRes):
 		self.WindowRes = WindowRes
 		self.MAXRANGE = 500 # max range to be drawn in cm
-		self.PRECISION_LIMIT = 80
+		self.PRECISION_LIMIT = 50
 
 		self.screencenter = (self.WindowRes[0] / 2, self.WindowRes[1] / 2)
 		self.workable_area = min(self.WindowRes[0] - 10, self.WindowRes[1] - 10)
@@ -15,6 +15,8 @@ class Renderer():
 		
 
 	def Draw(self, window, lap):
+		window.fill((20, 20, 20))
+
 		self.draw_guidelines(window)
 
 		if lap is not None:
@@ -51,11 +53,11 @@ class Renderer():
 			if point[1] < self.PRECISION_LIMIT:
 				point_color = (140, 0, 0)
 
-			limit_r = min(self.PRECISION_LIMIT, point[1])
-			precision_limit_position = (self.density * limit_r * math.cos(a), self.density * limit_r * math.sin(a))
-			precision_final_position = (self.screencenter[0] + precision_limit_position[0], self.screencenter[1] - precision_limit_position[1])
+				limit_r = min(self.PRECISION_LIMIT, point[1])
+				precision_limit_position = (self.density * limit_r * math.cos(a), self.density * limit_r * math.sin(a))
+				precision_final_position = (self.screencenter[0] + precision_limit_position[0], self.screencenter[1] - precision_limit_position[1])
+				pygame.draw.line(window, (30, 0, 0), self.screencenter, precision_final_position, 4)
+			else:
+				pygame.draw.line(window, (0, 60, 0), self.screencenter, final_position, 4)
 
-
-			pygame.draw.line(window, (0, 60, 0), self.screencenter, final_position, 4)
-			pygame.draw.line(window, (30, 0, 0), self.screencenter, precision_final_position, 4)
 			pygame.draw.circle(window, (point_color), final_position, 4)

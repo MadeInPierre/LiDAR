@@ -16,7 +16,7 @@ volatile bool bool_new_lap = false;
 bool reset = false; //if the host asks for a reset.
 
 LIDARLite LidarLite;
-const int LidarMode = 1; //See example DistanceToi2c from LidarLite library to test Lidar modes.
+const int LidarMode = 2; //See example DistanceToi2c from LidarLite library to test Lidar modes.
 
 void new_lap(bool reset) {
   // Resets the counter for a new lap. Sends a new lap header (flag for the loop).
@@ -68,7 +68,7 @@ void loop() {
   if(reset) { Serial.println("RESET"); reset = false; } //Send 'RESET' and end line to start fresh (the host will receive 'xxxxxxxxxxRESET\n').
   
   if(bool_new_lap) {
-    Serial.println();
+    Serial.println(); Serial.println(); Serial.println();
     Serial.print("L");
     Serial.print(LapCount);
     Serial.print(":");

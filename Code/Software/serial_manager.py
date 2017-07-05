@@ -10,27 +10,31 @@ class SerialParser():
 		###### PROTOCOL STRUCTURE FOR A LAP : L12(-176):dist1,dist2,...,dist176,\r\n
 		###### 12 = Lap number, "-176" only on lap 0 - gives the number of tiks per lap.
 
-
-		if "RESET" in data:
+		if len(data) < 3:
+			pass # empty message, used for synchronisation. Ignore it.
+		elif "RESET" in data:
 			return True #confirm that reset occured
 		elif data[0] == 'L' and data[-1] == '\n':
 			# If the start and end of the message is correct for a full lap data, we assume this is correct and create a new lap object with it.
-			print("ANALYSING")
+
 			# Analyse header (format ! 'L12:' or 'L0-177:')
 			data_header, data_points = data.split(':')
 			lap_count = int(data_header[1:])
 
-			print("LapCount = " + str(lap_count))
+			print "Lap " + str(lap_count),
 
 			points = map(int, data_points.split(',')[:-1])
 
 			#print("Points = " + str(points)) #VERBOSE
-			print("NumberOfPoints = " + str(len(points)))
+			print("(" + str(len(points)) + " points)")
 
 
 			# Create a lap with this data
-			self.receiveError(lapsStack.getPointsPerLap(), points) # check receive error to eventually pop a warning
-			lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
+			if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
+				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
+			else:
+				print("[WARNING] Too many points, discarted the lap.")
+				print "Discarted data = " + data
 		elif data[0] == 'L' and data[-1] != '\n':
 			print("[WARNING] Received non full-lap message from lidar")
 		elif 'P' in data and data[-1] == '\n':
@@ -49,7 +53,7 @@ class SerialParser():
 		#print("PPL = " + str(self.POINTS_PER_LAP) + ", got " + str(len(self.PointsDistances)) + " points.") #VERBOSE
 		error = len(points) - points_per_lap
 		if error != 0:
-			print("[WARNING] The lap does not have the right number of points (error = " + str(error) + ". Using the number of points for calculus of angle.")
+			pass#print("[WARNING] The lap does not have the right number of points (error = " + str(error) + ". Using the number of points for calculus of angle.")
 		return error
 
 
@@ -126,7 +130,7 @@ class Lap():
 class Lap():
 	def __init__(self, lap_count, points, points_per_lap = -1):
 		self.LapCount = lap_count
-		self.PointsPerLap = points_per_lap
+		self.POINTS_PER_LAP = points_per_lap
 		self.PointsDistances = points
 
 		self.PointsFinal = []
@@ -134,14 +138,15 @@ class Lap():
 		self.findAngles()
 
 	def findAngles(self):
-		angle_increment = 360 / len(self.PointsDistances) # angle in degrees
+		angle_increment = 360 / float(self.POINTS_PER_LAP) # angle in degrees
 		i = 0
 		for point in self.PointsDistances:
 			self.PointsFinal.append((i * angle_increment, self.PointsDistances[i]))
 			i += 1
 
+
 	def setPointsPerLap(self, PPL):
-		self.PointsPerLap = PPL
+		self.POINTS_PER_LAP = PPL
 
 	def getPoints(self):
 		return self.PointsFinal

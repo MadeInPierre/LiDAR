@@ -8,7 +8,7 @@ from serial_manager import *
 pygame.init()
 clock = pygame.time.Clock()
 
-WindowRes = (1440, 1440)
+WindowRes = (1600, 1600)
 window = pygame.display.set_mode(WindowRes)
 pygame.display.set_caption("LIDAR Cloud POV")
 
@@ -31,7 +31,6 @@ while running:
 			running = False
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
 			running = False
-	window.fill((0, 0, 0))
 
 
 
