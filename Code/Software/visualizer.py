@@ -13,7 +13,11 @@ window = pygame.display.set_mode(WindowRes)
 pygame.display.set_caption("LIDAR Cloud POV")
 
 renderer = Renderer(WindowRes)
-communication = SerialManager("/dev/ttyUSB0", 500000)
+try:
+	communication = SerialManager("/dev/ttyUSB0", 500000)
+except:
+	communication = SerialManager("/dev/ttyUSB1", 500000)
+
 communication.openSerial()
 
 PointsPerLap = communication.getPointsPerLap()
@@ -21,6 +25,7 @@ print("Got PPL = " + str(PointsPerLap))
 lapsStack = LapsStack(PointsPerLap)
 
 communication.resetLidar()
+communication.setSpeed(1, lapsStack)
 
 
 running = True
@@ -31,13 +36,30 @@ while running:
 			running = False
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
 			running = False
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+			renderer.Zoom()
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
+			renderer.UnZoom()
+		if event.type == pygame.KEYDOWN and event.key == 224: # azerty key 0
+			communication.setSpeed(0, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == 38:  # azerty key 1
+			communication.setSpeed(1, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == 233: # azerty key 2
+			communication.setSpeed(2, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == 34:  # azerty key 3
+			communication.setSpeed(3, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == 39:  # azerty key 4
+			communication.setSpeed(4, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == 40:  # azerty key 5
+			communication.setSpeed(5, lapsStack)
+
 
 
 
 
 	serial_update = communication.updateSerial(lapsStack = lapsStack)
 	
-	renderer.Draw(window, lapsStack.getLatestLap())
+	renderer.Draw(window, lapsStack)
 	pygame.display.update()
 	clock.tick(20)
 

@@ -14,6 +14,9 @@ class SerialParser():
 			pass # empty message, used for synchronisation. Ignore it.
 		elif "RESET" in data:
 			return True #confirm that reset occured
+		elif 'P' in data and data[-1] == '\n':
+			# The Lidar just gave the angular resolution (PointsPerLap) in format 'P176\n'.
+			return int(data[data.index('P') + 1:])
 		elif data[0] == 'L' and data[-1] == '\n':
 			# If the start and end of the message is correct for a full lap data, we assume this is correct and create a new lap object with it.
 
@@ -30,16 +33,12 @@ class SerialParser():
 
 
 			# Create a lap with this data
-			#if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
-			lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
-			#else:
-			#	print("[WARNING] Too many points, discarted the lap.")
-			#	print "Discarted data = " + data
+			if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
+				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
+			else:
+				print("[WARNING] Too many or too less points, discarted the lap.")
 		elif data[0] == 'L' and data[-1] != '\n':
 			print("[WARNING] Received non full-lap message from lidar")
-		elif 'P' in data and data[-1] == '\n':
-			# The Lidar just gave the angular resolution (PointsPerLap) in format 'P176\n'.
-			return int(data[data.index('P') + 1:])
 		else:
 			print("[NOT_RECOGNIZED] >>> " + data)
 			return False
@@ -65,8 +64,10 @@ class LapsStack():
 	def __init__(self, points_per_lap):
 		self.Stack = []
 		self.PointsPerLap = points_per_lap
+		self.CurrentLidarSpeed = 0
 
 	def NewLap(self, lap):
+		lap.LidarSpeed = self.CurrentLidarSpeed
 		self.Stack.append(lap)
 
 	def ResetStack(self):
@@ -77,65 +78,35 @@ class LapsStack():
 	def getPointsPerLap(self):
 		return self.PointsPerLap
 
+	def getNumberOfLaps(self):
+		return len(self.Stack)
 	def getLatestLap(self):
 		if len(self.Stack) > 0:
 			return self.Stack[-1]
 		return None
 
-'''
-class Lap():
-	def __init__(self, points_per_lap, lap_count):
-		self.POINTS_PER_LAP = points_per_lap
-		self.LapCount = lap_count
-		self.PointsDistances = [] #1D array with only distance values per measurement.
-
-		self.PointsFinal = [] #once PointsDistance is full, self.analyse() guesses the angles based on POINTS_PER_LAP and the array length.
-
-		self.StartTime = time.time() * 1000
-		self.EndTime = 0
-
-		self.LapEnded = False
-
-	def AddPoint(self, distance):
-		self.PointsDistances.append(distance)
-
-	def EndLap(self):
-		self.LapEnded = True
-		self.EndTime = time.time() * 1000
-		self.findAngles()
-
-	def GetPoints(self):
-		if self.LapEnded:
-			return self.PointsFinal
+	def getLastHz(self):
+		if len(self.Stack) >= 2:
+			return 1 / ((self.Stack[-1].ReceivedTime - self.Stack[-2].ReceivedTime) * 0.001)
 		else:
-			return False #TODO better error check ? 
+			return 0
 
-	def findAngles(self):
-		if tickError() == 0:
-			angle_increment = 360 / len(self.PointsDistances) # angle in degrees
-			for i in range(0, len(self.PointsDistances)):
-				self.PointsFinal = (i * angle_increment, self.PointsDistances[i])
 
-		else:
-			print(str(tickError()) + " receive error.")
 
-	def receiveError(self):
-		# When scanning starts, the lidar sends the number of ticks expected per lap.
-		# This functions compares this number with the number of measurements received.
-		# Since we should get one measurement per tick, these two numbers are compared to get the amount of data loss.
-		# (just a debug function)
-		print("PPL = " + str(self.POINTS_PER_LAP) + ", got " + str(len(self.PointsDistances)) + " points.") #VERBOSE
-		return len(self.PointsDistances) - self.POINTS_PER_LAP
-'''
+
+
 class Lap():
 	def __init__(self, lap_count, points, points_per_lap = -1):
 		self.LapCount = lap_count
+		self.LidarSpeed = 0
 		self.POINTS_PER_LAP = points_per_lap
 		self.PointsDistances = points
+		self.ReceivedTime = time.time() * 1000
 
 		self.PointsFinal = []
 
 		self.findAngles()
+		# self.filterNoise()
 
 	def findAngles(self):
 		angle_increment = 360 / float(self.POINTS_PER_LAP) # angle in degrees
@@ -143,6 +114,20 @@ class Lap():
 		for point in self.PointsDistances:
 			self.PointsFinal.append((i * angle_increment, self.PointsDistances[i]))
 			i += 1
+
+	def filterNoise(self):
+		#remove points with distance = 1 (1 is given from the lidar when the distance was not found)
+		done = False
+		i = 0
+		while done == False:
+			if i < len(self.PointsFinal):
+				if self.PointsFinal[i][1] == 1:
+					del self.PointsFinal[i]
+					i = 0
+			else:
+				done = True
+
+
 
 
 	def setPointsPerLap(self, PPL):
@@ -158,7 +143,7 @@ class SerialManager():
 		self.SERIAL = serial.Serial()
 		self.SERIAL.baudrate = SPEED
 		self.SERIAL.port = PORT
-		self.SERIAL.timeout = 2
+		self.SERIAL.timeout = 1.5
 
 		self.last_points_time = time.time() * 1000
 
@@ -187,6 +172,11 @@ class SerialManager():
 	def getPointsPerLap(self):
 		self.SERIAL.write('P')
 		return self.updateSerial(waitForResponse = True)
+
+	def setSpeed(self, speed, lap_stack):
+		print "[INFO] Setting Lidar speed " + str(speed)
+		self.SERIAL.write(str(speed))
+		lap_stack.CurrentLidarSpeed = speed
 				
 
 	def openSerial(self):
@@ -201,47 +191,4 @@ class SerialManager():
 
 
 
-
-
-
-
-
-		'''
-				if data[-1].decode('utf-8') == '\n':
-					# Decoding bytes to ascii string
-					ascii = ""
-					buf = [] 	# temp buffer to get the distances separated into bytes 
-					for d in data:
-						output_d = ''
-						try:
-							char = d.decode('utf-8')
-							print("DECODED" + str(char))
-							if char == ',':
-								if len(buf) > 0:
-									ascii += str(self.bytes_to_int(buf))
-								else:
-									ascii += 'E'
-									print("[ERROR] BYTES TO INT DECODE ERROR")
-								ascii += ','
-							elif char == 'L':
-								ascii += 'L'
-							elif char == ':':
-								ascii += str(self.bytes_to_int(buf))
-							else:
-								buf.append(d)
-						except: #Can receive noise during the lidar startup, ignore it
-							buf.append(d)
-							print("[ERROR] UTF-8 DECODE ERROR : " + str(d))
-
-				else:
-					# timeout (lidar not running, too slow, problem...)
-					print("[WARNING] RECEIVE_TIMEOUT")
-						
-
-				self.analyse(data)
-
-
-				print("RAWDATA : " + ascii)
-				return
-		'''
 

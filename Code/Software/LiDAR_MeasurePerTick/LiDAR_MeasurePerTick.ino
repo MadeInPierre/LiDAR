@@ -1,15 +1,20 @@
 #include <Wire.h>
 #include <LIDARLite.h>
 
+/*
+Send number 0-5 to control motor speed (0 = stop, 5 = full)
+*/
+
 /*Different scanning modes are possible :
     - 0 : SLOW. 2 degrees angular resolution, max 1.2Hz but more precise (+- 3cm)
     - 1 : FAST. 1 degree  angular resolution, max 3Hz   but less precise (+- 6cm)
 */
-#define MODE 0
+#define MODE 1
 
-#define TICKS_PER_LAP 176 * (1 + MODE) //176 ticks if slow mode (detects only rising ticks, 354 otherwise (rising + falling)
+#define TICKS_PER_LAP 176 * (1 + MODE) //176 rising ticks per lap ==> 176 ticks if slow mode (detects only rising ticks), 354 otherwise (rising + falling)
 
 #define PIN_LED LED_BUILTIN
+#define PIN_MOTOR_PWM D7
 #define PIN_ENCODER_INPUT D3
 
 volatile int LapCount;
@@ -21,7 +26,13 @@ bool reset = false; //if the host asks for a reset.
 volatile bool recalibrate_lidar = true;
 
 LIDARLite LidarLite;
-const int LidarMode = 1; //See example DistanceToi2c from LidarLite library to test Lidar modes.
+const int LidarMode = MODE; //See example DistanceToi2c from LidarLite library to test Lidar modes. 0 for SLOW (more precise), 1 for FAST (less precise, faster) 
+
+void motor_set_speed(int speed) {
+  // Give a value from 0 (full stop) to 2013 (full speed)
+  // Using transistor "BC558C W0 E"
+  analogWrite(PIN_MOTOR_PWM, 1023 - speed);
+}
 
 void new_lap(bool reset) {
   // Resets the counter for a new lap. Sends a new lap header (flag for the loop).
@@ -43,7 +54,7 @@ void encoder_tick() {
 }
 void check_serial_read() {
   if(Serial.available()) {
-    char c = Serial.read();
+    char c = (char)Serial.read();
     switch(c) {
       case 'R': //RESET
         new_lap(true);
@@ -52,6 +63,24 @@ void check_serial_read() {
       case 'P': //GET PPL. The host asks for the angular resolution of the lidar. Reply with the result.
         Serial.print("P");
         Serial.println(TICKS_PER_LAP + 1);
+        break;
+      case '0':
+        motor_set_speed(0);   // motor full stop
+        break;
+      case '1':
+        motor_set_speed(250); // minimum driving speed
+        break;
+      case '2':
+        motor_set_speed(400); // 
+        break;
+      case '3':
+        motor_set_speed(600); // 
+        break;
+      case '4':
+        motor_set_speed(800); // 
+        break;
+      case '5':
+        motor_set_speed(1023);// full motor speed
         break;
     }
   }
@@ -95,6 +124,6 @@ void loop() {
 
   check_serial_read();
 
-  if(Serial.availableForWrite() < 10) digitalWrite(PIN_LED, LOW); //DEBUG
+  if(Serial.availableForWrite() < 10) digitalWrite(PIN_LED, LOW); //DEBUG (high and low inverted with the esp)
   else digitalWrite(PIN_LED, HIGH);
 }
