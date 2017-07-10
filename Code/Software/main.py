@@ -2,7 +2,12 @@ import pygame
 from renderer import Renderer
 from serial_manager import *
 
-
+'''
+TODO/FEATURELIST:
+	- New keyboard keys
+		- S, F, U for Slow, Fast and Ultra mode. Hotswap the mode while running
+		- O for resetting the 0 angle position (Offset)
+'''
 
 
 pygame.init()

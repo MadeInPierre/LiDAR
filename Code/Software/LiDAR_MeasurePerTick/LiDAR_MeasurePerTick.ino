@@ -1,4 +1,4 @@
-#include <Wire.h>
+ #include <Wire.h>
 #include <LIDARLite.h>
 
 /*
@@ -6,16 +6,17 @@ Send number 0-5 to control motor speed (0 = stop, 5 = full)
 */
 
 /*Different scanning modes are possible :
-    - 0 : SLOW. 2 degrees angular resolution, max 1.2Hz but more precise (+- 3cm)
-    - 1 : FAST. 1 degree  angular resolution, max 3Hz   but less precise (+- 6cm)
+    - 0 : SLOW.  2 degrees angular resolution, max 1.2Hz, +- 3cm
+    - 1 : FAST.  1 degree  angular resolution, max 1.5Hz, +- 6cm
+    - 2 : ULTRA. 2 degrees angular resolution, max 3.0Hz, +- 6cm 
 */
 #define MODE 1
 
-#define TICKS_PER_LAP 176 * (1 + MODE) //176 rising ticks per lap ==> 176 ticks if slow mode (detects only rising ticks), 354 otherwise (rising + falling)
+int TICKS_PER_LAP = 0; //176 rising ticks per lap ==> 176 ticks if slow mode (detects only rising ticks), 354 otherwise (rising + falling)
 
 #define PIN_LED LED_BUILTIN
 #define PIN_MOTOR_PWM D7
-#define PIN_ENCODER_INPUT D3
+#define PIN_ENCODER_INPUT D6
 
 volatile int LapCount;
 volatile int lap_tick_count;
@@ -91,16 +92,27 @@ void setup() {
 	pinMode(PIN_LED, OUTPUT);
 	pinMode(PIN_ENCODER_INPUT, INPUT);
 
-  // Configuring lidar to 
-	LidarLite.begin(LidarMode, true);
-	LidarLite.configure(LidarMode);
-  if(MODE == 1) LidarLite.write(0x02, 0x0d);       // Maximum acquisition count of 0x0d. (default is 0x80)
-                //LidarLite.write(0x04, 0b00000100); // Use non-default reference acquisition count
-                //LidarLite.write(0x12, 0x03);     // Reference acquisition count of 3 (default is 5)
-  delay(10);
+  LidarLite.begin(LidarMode, true);
+  LidarLite.configure(LidarMode);
 
-	if(MODE == 0) attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, RISING);
-  if(MODE == 1) attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, CHANGE);
+  switch(MODE) {
+    case 0:
+      TICKS_PER_LAP = 176;
+      attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, RISING);
+      break;
+    case 1:
+      TICKS_PER_LAP = 176 * 2;
+      LidarLite.write(0x02, 0x0d);
+      attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, CHANGE);
+      break;
+    case 2: 
+      TICKS_PER_LAP = 176;
+      LidarLite.write(0x02, 0x0d);
+      attachInterrupt(PIN_ENCODER_INPUT, encoder_tick, RISING);
+      break;
+  }
+
+  delay(10);
 	new_lap(true);
 }
 
