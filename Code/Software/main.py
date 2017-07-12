@@ -1,6 +1,7 @@
 import pygame
 from renderer import Renderer
 from serial_manager import *
+from analyser import *
 
 '''
 TODO/FEATURELIST:
@@ -33,6 +34,8 @@ communication.resetLidar()
 communication.setSpeed(1, lapsStack)
 
 
+analyser = Analyser()
+
 running = True
 while running:
 	events = pygame.event.get()
@@ -57,14 +60,17 @@ while running:
 			communication.setSpeed(4, lapsStack)
 		if event.type == pygame.KEYDOWN and event.key == 40:  # azerty key 5
 			communication.setSpeed(5, lapsStack)
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_r:  # azerty key 5
+			communication.resetLidar()
 
 
 
 
 
 	serial_update = communication.updateSerial(lapsStack = lapsStack)
-	
-	renderer.Draw(window, lapsStack)
+
+	if lapsStack.getNumberOfLaps() > 0:
+		renderer.Draw(window, lapsStack, analyser)
 	pygame.display.update()
 	clock.tick(20)
 

@@ -1,5 +1,6 @@
 import pygame, math
 import time
+from analyser import *
 
 class Renderer():
 	def __init__(self, WindowRes):
@@ -28,13 +29,16 @@ class Renderer():
 
 		
 
-	def Draw(self, window, lap_stack):
+	def Draw(self, window, lap_stack, analyser):
 		window.fill((20, 20, 20))
 
 		self.draw_guidelines(window)
 
 		if lap_stack is not None and lap_stack.getNumberOfLaps() > 0:
-			self.draw_points(window, lap_stack.getLatestLap())
+			self.draw_points(window, lap_stack.getLastLap())
+			#self.draw_linearmode(window, lap_stack)
+			self.draw_lines(window, lap_stack, analyser)
+
 			self.draw_gui(window, lap_stack)
 
 
@@ -58,36 +62,23 @@ class Renderer():
 			pygame.draw.circle(window, (180, 180, 180), self.screencenter, (self.workable_area / 2) * i/n_circles, 1)
 
 	def draw_points(self, window, lap):
-		for point in lap.getPoints():
-			a = math.radians(point[0] + 90)
-			r = self.density * point[1]
+		for point in lap.getPointsPolar():
+			pos = self.pointPolarToMap(point)
 
-			position = (int(r * math.cos(a)), int(r * math.sin(a)))
-			final_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
-
-			point_color = (0, 255, 0)
+			color = (0, 60, 0)
 			if point[1] < self.PRECISION_LIMIT:
-				point_color = (140, 0, 0)
+				color = (60, 0, 0)
 
-				limit_r = min(self.PRECISION_LIMIT, point[1])
-				precision_limit_position = (self.density * limit_r * math.cos(a), self.density * limit_r * math.sin(a))
-				precision_final_position = (self.screencenter[0] + precision_limit_position[0], self.screencenter[1] - precision_limit_position[1])
-				pygame.draw.line(window, (30, 0, 0), self.screencenter, precision_final_position, 4)
-			else:
-				pygame.draw.line(window, (0, 60, 0), self.screencenter, final_position, 4)
+			pygame.draw.line(window, color, self.screencenter, pos, 4)
 
+		for point in lap.getPointsPolar():
+			pos = self.pointPolarToMap(point)
 
-		for point in lap.getPoints():
-			a = math.radians(point[0] + 90)
-			r = self.density * point[1]
-
-			point_color = (0, 255, 0)
+			color = (0, 255, 0)
 			if point[1] < self.PRECISION_LIMIT:
-				point_color = (140, 0, 0)
+				color = (140, 0, 0)
 
-			position = (int(r * math.cos(a)), int(r * math.sin(a)))
-			final_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
-			pygame.draw.circle(window, (point_color), final_position, 3)
+			pygame.draw.circle(window, (color), pos, 3)
 
 	def draw_gui(self, window, lap_stack):
 		speed_canvas = pygame.Surface((225, 100))
@@ -104,3 +95,39 @@ class Renderer():
 
 		range_text = self.font2.render(str(self.MAXRANGE) + "m", True, (255, 255, 255))
 		window.blit(range_text, (self.workable_area - range_text.get_width(), self.screencenter[1] - 23))		
+
+	def draw_lines(self, window, lap_stack, analyser):
+		lines = analyser.FindLines(lap_stack.getLastLap().getPointsCartesian())
+		for line in lines:
+			pygame.draw.line(window, (255, 255, 255), self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[0]]), 
+													  self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[1]]))
+
+
+	def pointPolarToMap(self, point):
+		a = math.radians(point[0] + 90)
+		r = self.density * point[1]
+
+		position = (int(r * math.cos(a)), int(r * math.sin(a)))
+		final_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
+		return final_position
+
+
+
+
+	def draw_linearmode(self, window, lap_stack):
+		lap_points = lap_stack.getLastLap().getPointsPolar()
+
+		x_interval = window.get_width() / len(lap_points)
+		i = 0
+		for point in lap_points:
+			r = point[1]
+			pygame.draw.circle(window, (255, 255, 0), (int(i * x_interval), window.get_height() - int(r * self.density)), 3)
+			i += 1
+
+
+
+
+
+	# def cartToPolar(self, point_xy)
+	# 	point_polar = (point_xy[0] * math.cos(point_xy[0]), point_xy[1] * math.sin(point_xy[1]))
+	# 	return point_polar

@@ -1,4 +1,4 @@
-import serial, time
+import serial, time, math
 
 class SerialParser():
 	def __init__(self):
@@ -80,7 +80,7 @@ class LapsStack():
 
 	def getNumberOfLaps(self):
 		return len(self.Stack)
-	def getLatestLap(self):
+	def getLastLap(self):
 		if len(self.Stack) > 0:
 			return self.Stack[-1]
 		return None
@@ -133,8 +133,15 @@ class Lap():
 	def setPointsPerLap(self, PPL):
 		self.POINTS_PER_LAP = PPL
 
-	def getPoints(self):
+	def getPointsPolar(self):
 		return self.PointsFinal
+	def getPointsCartesian(self):
+		points_cart = []
+		for p in self.PointsFinal:
+			a = math.radians(p[0])
+			position = (int(p[1] * math.cos(a)), int(p[1] * math.sin(a)))
+			points_cart.append(position)
+		return points_cart
 
 
 
