@@ -1,0 +1,38 @@
+﻿                     PROPRIETES MASSIQUES DE PIÈCE MAINDISC
+
+                         VOLUME =  9.2059574e+03 MM^3
+                     SUPERFICIE =  1.0092657e+04 MM^2
+                MASSE VOLUMIQUE =  1.2500000e-06 KILOGRAMME / MM^3
+                          MASSE =  1.1507447e-02 KILOGRAMME 
+
+                 CENTRE DE GRAVITE relatif au repère _MAINDISC :
+X   Y   Z          -3.4999418e-02 -7.7940810e-01 -6.0113943e-01  MM
+
+           INERTIE relative au repère _MAINDISC :  (KILOGRAMME * MM^2)
+
+TENSEUR D'INERTIE :
+Ixx Ixy Ixz         3.2962034e+00 -3.2409510e-02  2.3808560e-02
+Iyx Iyy Iyz        -3.2409510e-02  6.0436022e+00 -2.4389300e-02
+Izx Izy Izz         2.3808560e-02 -2.4389300e-02  2.9931811e+00
+
+           INERTIE au CENTRE DE GRAVITE relative au repère _MAINDISC :
+                                                  (KILOGRAMME * MM^2)           
+TENSEUR D'INERTIE :
+Ixx Ixy Ixz         3.2850545e+00 -3.2095600e-02  2.4050671e-02
+Iyx Iyy Iyz        -3.2095600e-02  6.0394297e+00 -1.8997682e-02
+Izx Izy Izz         2.4050671e-02 -1.8997682e-02  2.9861765e+00
+
+               MOMENTS PRINCIPAUX D'INERTIE :  (KILOGRAMME * MM^2)
+I1  I2  I3          2.9841656e+00  3.2865697e+00  6.0399253e+00
+
+      MATRICE ROTATION _MAINDISC orientée par rapport aux AXES PRINCIPAUX :
+                      -0.07911        0.99680       -0.01170
+                       0.00537        0.01217        0.99991
+                       0.99685        0.07904       -0.00631
+
+ ANGLES DE ROTATION _MAINDISC orientés par rapport aux AXES PRINCIPAUX (degrés):
+angles suivant x y z  -90.362         -0.671        -94.538 
+
+                 RAYON DE GYRATION relatif aux AXES PRINCIPAUX :
+R1  R2  R3          1.6103563e+01  1.6899815e+01  2.2910064e+01  MM
+

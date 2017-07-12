@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--UGC_VERSION = 1024-->
+<XML_DOCUMENT xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+    <PTC_HEADER>
+        <VENDOR>Parametric Technology Corporation</VENDOR>
+        <PRODUCT>Creo Parametric 3302014310</PRODUCT>
+        <XML_VERSION>1.0</XML_VERSION>
+        <HOST_NAME>DESKTOP-UCHGTRG</HOST_NAME>
+        <USER>pierr</USER>
+        <MACHINE_TYPE> Intel64 Family 6 Model 78 Stepping 3  GenuineIntel  2208 MHz</MACHINE_TYPE>
+    </PTC_HEADER>
+    <item tag="SUMMARY OF IMPORT PROCESSING" pointer="TRUE" item_type="4">
+        <name type="9" pointer="TRUE">
+            <value__PO__ws_val__PC__>Résumé du processus d'importation</value__PO__ws_val__PC__>
+        </name>
+        <item__PO__item_set__PC__ tag="NULL" pointer="TRUE">
+            <name>NULL</name>
+            <items SOAP-ENC:Array="[52]">
+                <items_ENTRY tag="Page info" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>MOTOR_POLOLU</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 2" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>2</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 2" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Pololu_-_1_250_Micro_gear_motor</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 3" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>3</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 3" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude9_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 4" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>4</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 4" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude2_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 5" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>5</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 5" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude7</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 6" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>6</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 6" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude2_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 7" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>7</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 7" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude10_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 8" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>8</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 8" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude1_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 9" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>9</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 9" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude5_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 10" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>10</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 10" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude6_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 11" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>11</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 11" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude10_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 12" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>12</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 12" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude6_4_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 13" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>13</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 13" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude6_3_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 14" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>14</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 14" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Fillet1</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 15" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>15</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 15" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude9</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 16" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>16</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 16" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude9_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 17" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>17</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 17" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Fillet2</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 18" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>18</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 18" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude18</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 19" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>19</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 19" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude6</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 20" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>20</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 20" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude6_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 21" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>21</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 21" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude8</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 22" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>22</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 22" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude10_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 23" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>23</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 23" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude7</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 24" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>24</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 24" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude5_3_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 25" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>25</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 25" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Boss-Extrude10_1_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Page info 26" pointer="TRUE" item_type="2">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="current page" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="total pages" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>26</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="short log" pointer="TRUE">
+                                <name type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value type="1" pointer="TRUE">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY tag="Input data 26" pointer="TRUE" item_type="2">
+                    <name type="9" pointer="TRUE">
+                        <value__PO__ws_val__PC__>Informations générales</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ tag="NULL" pointer="TRUE">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY tag="Interface type" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Type d'interface :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="6" pointer="TRUE">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="File name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du fichier :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>C:\Users\pierr\Google Drive\Projects\3D Lidar\3D Modeling\V3\Motor 1;250\Pololu - 1_250 Micro gear motor.step</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY tag="Model name" pointer="TRUE">
+                                <name type="9" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Nom du modèle :</value__PO__ws_val__PC__>
+                                </name>
+                                <value type="10" pointer="TRUE">
+                                    <value__PO__ws_val__PC__>Cut-Extrude5_2_</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+            </items>
+        </item__PO__item_set__PC__>
+    </item>
+</XML_DOCUMENT>

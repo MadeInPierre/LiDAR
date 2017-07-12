@@ -1,0 +1,38 @@
+﻿                     PROPRIETES MASSIQUES DE PIÈCE MAINBASE
+
+                         VOLUME =  1.8953942e+04 MM^3
+                     SUPERFICIE =  1.7747487e+04 MM^2
+                MASSE VOLUMIQUE =  1.2500000e-06 KILOGRAMME / MM^3
+                          MASSE =  2.3692427e-02 KILOGRAMME 
+
+                 CENTRE DE GRAVITE relatif au repère _MAINBASE :
+X   Y   Z          -1.1678522e+00  6.6154745e+00 -1.1102875e-04  MM
+
+           INERTIE relative au repère _MAINBASE :  (KILOGRAMME * MM^2)
+
+TENSEUR D'INERTIE :
+Ixx Ixy Ixz         1.0585253e+01  4.5627746e-02  2.3057154e-05
+Iyx Iyy Iyz         4.5627746e-02  1.6631740e+01  0.0000000e+00
+Izx Izy Izz         2.3057154e-05  0.0000000e+00  9.9089787e+00
+
+           INERTIE au CENTRE DE GRAVITE relative au repère _MAINBASE :
+                                                  (KILOGRAMME * MM^2)           
+TENSEUR D'INERTIE :
+Ixx Ixy Ixz         9.5483661e+00 -1.3741749e-01  2.6129237e-05
+Iyx Iyy Iyz        -1.3741749e-01  1.6599426e+01  0.0000000e+00
+Izx Izy Izz         2.6129237e-05  0.0000000e+00  8.8397778e+00
+
+               MOMENTS PRINCIPAUX D'INERTIE :  (KILOGRAMME * MM^2)
+I1  I2  I3          8.8397778e+00  9.5456890e+00  1.6602103e+01
+
+      MATRICE ROTATION _MAINBASE orientée par rapport aux AXES PRINCIPAUX :
+                      -0.00004        0.99981       -0.01948
+                       0.00000        0.01948        0.99981
+                       1.00000        0.00004        0.00000
+
+ ANGLES DE ROTATION _MAINBASE orientés par rapport aux AXES PRINCIPAUX (degrés):
+angles suivant x y z  -90.000         -1.116        -90.002 
+
+                 RAYON DE GYRATION relatif aux AXES PRINCIPAUX :
+R1  R2  R3          1.9315942e+01  2.0072380e+01  2.6471392e+01  MM
+
