@@ -16,11 +16,18 @@ class Renderer():
 		self.font = pygame.font.SysFont("Arial", 60)
 		self.font2 = pygame.font.SysFont("Arial", 20)
 
+		self.SHOW_WALLS = True
+		self.SHOW_POINTS = True
+
+	def toggleWalls(self):
+		self.SHOW_WALLS = not self.SHOW_WALLS
+	def togglePoints(self):
+		self.SHOW_POINTS = not self.SHOW_POINTS
+
+
 	def update_zoom(self, max_range):
 		self.MAXRANGE = max_range # max range to be drawn in cm
 		self.density = (self.workable_area / 2) / float(self.MAXRANGE) # cm/pixel
-		print "zoom" + str(self.MAXRANGE)
-
 
 	def Zoom(self):
 		self.update_zoom(self.MAXRANGE + 50)
@@ -35,11 +42,13 @@ class Renderer():
 		self.draw_guidelines(window)
 
 		if lap_stack is not None and lap_stack.getNumberOfLaps() > 0:
-			self.draw_points(window, lap_stack.getLastLap())
-			#self.draw_linearmode(window, lap_stack)
-			self.draw_lines(window, lap_stack, analyser)
+			if self.SHOW_POINTS:
+				self.draw_points(window, lap_stack.getLastLap())
+				#self.draw_linearmode(window, lap_stack)
+			if self.SHOW_WALLS:
+				self.draw_lines(window, lap_stack, analyser)
 
-			self.draw_gui(window, lap_stack)
+		self.draw_gui(window, lap_stack)
 
 
 		
@@ -93,14 +102,15 @@ class Renderer():
 		window.blit(speed_text, (45, 68))	
 
 
-		range_text = self.font2.render(str(self.MAXRANGE) + "m", True, (255, 255, 255))
+		range_text = self.font2.render(str(self.MAXRANGE) + "cm", True, (255, 255, 255))
 		window.blit(range_text, (self.workable_area - range_text.get_width(), self.screencenter[1] - 23))		
 
 	def draw_lines(self, window, lap_stack, analyser):
 		lines = analyser.FindWalls(lap_stack.getLastLap().getPointsCartesian())
 		for line in lines:
-			pygame.draw.line(window, (255, 255, 255), self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[0]]), 
-													  self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[1]]))
+			pygame.draw.line(window, (255, 0, 0), self.pointCartesianToMap(line[0]), self.pointCartesianToMap(line[1]), 4)
+				#self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[0]]), 
+				#									  self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[1]]))
 
 
 	def pointPolarToMap(self, point):
@@ -108,9 +118,20 @@ class Renderer():
 		r = self.density * point[1]
 
 		position = (int(r * math.cos(a)), int(r * math.sin(a)))
-		final_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
-		return final_position
+		map_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
+		return map_position
 
+	def pointCartesianToMap(self, point):
+		if point[0] == 0:
+			a = math.pi/2.0 if point[1] > 0 else -math.pi/2.0
+		else:
+			a = math.atan2(point[1], point[0])
+		a += math.pi / 2.0
+		r = math.sqrt(point[0]**2 + point[1]**2) * self.density
+		
+		position = (int(r * math.cos(a)), int(r * math.sin(a)))
+		map_position = (self.screencenter[0] + position[0], self.screencenter[1] - position[1])
+		return map_position
 
 
 

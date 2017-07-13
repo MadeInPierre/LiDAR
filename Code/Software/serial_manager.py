@@ -4,7 +4,7 @@ class SerialParser():
 	def __init__(self):
 		pass
 
-	def Parse(self, data, lapsStack):
+	def Parse(self, data, lapsStack, logger):
 		# If data is valid, returns a Lap object.
 
 		###### PROTOCOL STRUCTURE FOR A LAP : L12(-176):dist1,dist2,...,dist176,\r\n
@@ -34,7 +34,7 @@ class SerialParser():
 
 			# Create a lap with this data
 			if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
-				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()))
+				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()), logger)
 			else:
 				print("[WARNING] Too many or too less points, discarted the lap.")
 		elif data[0] == 'L' and data[-1] != '\n':
@@ -65,10 +65,14 @@ class LapsStack():
 		self.Stack = []
 		self.PointsPerLap = points_per_lap
 		self.CurrentLidarSpeed = 0
+		self.StartTime = time.time() * 1000
 
-	def NewLap(self, lap):
+	def NewLap(self, lap, logger):
 		lap.LidarSpeed = self.CurrentLidarSpeed
+		lap.ReceivedTime = time.time() * 1000 - self.StartTime
 		self.Stack.append(lap)
+		logger.NewLap(lap)
+
 
 	def ResetStack(self):
 		self.Stack = []
@@ -101,7 +105,7 @@ class Lap():
 		self.LidarSpeed = 0
 		self.POINTS_PER_LAP = points_per_lap
 		self.PointsDistances = points
-		self.ReceivedTime = time.time() * 1000
+		self.ReceivedTime = 0
 
 		self.PointsFinal = []
 
@@ -117,11 +121,9 @@ class Lap():
 
 	def filterNoise(self):
 		#remove points with distance = 1 (1 is given from the lidar when the distance was not found)
-		done = False
-		i = 0
-		for point in self.PointsDistances:
-			if point == 1:
-				point = 0
+		for i in range(0, len(self.PointsDistances)):
+			if self.PointsDistances[i] == 1:
+				self.PointsDistances[i] = 0
 		'''
 		while done == False:
 			if i < len(self.PointsFinal):
@@ -146,6 +148,8 @@ class Lap():
 			position = (p[1] * math.cos(a), p[1] * math.sin(a))
 			points_cart.append(position)
 		return points_cart
+	def getTime(self):
+		return self.ReceivedTime
 
 
 
@@ -160,12 +164,12 @@ class SerialManager():
 
 		self.serialParser = SerialParser()
 
-	def updateSerial(self, lapsStack = None, waitForResponse = False):
+	def updateSerial(self, lapsStack = None, logger = None, waitForResponse = False):
 		if self.SERIAL.is_open:
 			if self.SERIAL.inWaiting() or waitForResponse == True:
 				data = self.SERIAL.readline() # returns a string until \n
 				#print("\n\n\nRAW : " + data)  # VERBOSE
-				parse_response = self.serialParser.Parse(data, lapsStack) # Parse the output and create Laps with it.
+				parse_response = self.serialParser.Parse(data, lapsStack, logger) # Parse the output and create Laps with it.
 				return parse_response
 			else:
 				return False

@@ -2,6 +2,7 @@ import pygame
 from renderer import Renderer
 from serial_manager import *
 from analyser import *
+from logger import *
 
 '''
 TODO/FEATURELIST:
@@ -35,9 +36,13 @@ communication.setSpeed(2, lapsStack)
 
 
 analyser = Analyser()
+logger = Logger()
+logger.Start("out.dat")
 
 running = True
 while running:
+	serial_update = communication.updateSerial(lapsStack = lapsStack, logger = logger)
+	
 	events = pygame.event.get()
 	for event in events: # quitting the program
 		if event.type == pygame.QUIT:
@@ -62,12 +67,11 @@ while running:
 			communication.setSpeed(5, lapsStack)
 		if event.type == pygame.KEYDOWN and event.key == pygame.K_r:  # azerty key 5
 			communication.resetLidar()
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_w:  # azerty key 5
+			renderer.toggleWalls()
+		if event.type == pygame.KEYDOWN and event.key == pygame.K_p:  # azerty key 5
+			renderer.togglePoints()
 
-
-
-
-
-	serial_update = communication.updateSerial(lapsStack = lapsStack)
 
 	if lapsStack.getNumberOfLaps() > 0:
 		renderer.Draw(window, lapsStack, analyser)
@@ -76,8 +80,10 @@ while running:
 
 
 communication.setSpeed(0, lapsStack)
+logger.End()
 pygame.quit()
 communication.closeSerial()
 quit()
+
 
 
