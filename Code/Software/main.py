@@ -31,7 +31,7 @@ print("Got PPL = " + str(PointsPerLap))
 lapsStack = LapsStack(PointsPerLap)
 
 communication.resetLidar()
-communication.setSpeed(1, lapsStack)
+communication.setSpeed(2, lapsStack)
 
 
 analyser = Analyser()
@@ -75,7 +75,7 @@ while running:
 	clock.tick(20)
 
 
-
+communication.setSpeed(0, lapsStack)
 pygame.quit()
 communication.closeSerial()
 quit()

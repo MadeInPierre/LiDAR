@@ -105,8 +105,8 @@ class Lap():
 
 		self.PointsFinal = []
 
+		self.filterNoise()
 		self.findAngles()
-		# self.filterNoise()
 
 	def findAngles(self):
 		angle_increment = 360 / float(self.POINTS_PER_LAP) # angle in degrees
@@ -119,6 +119,10 @@ class Lap():
 		#remove points with distance = 1 (1 is given from the lidar when the distance was not found)
 		done = False
 		i = 0
+		for point in self.PointsDistances:
+			if point == 1:
+				point = 0
+		'''
 		while done == False:
 			if i < len(self.PointsFinal):
 				if self.PointsFinal[i][1] == 1:
@@ -126,7 +130,7 @@ class Lap():
 					i = 0
 			else:
 				done = True
-
+		'''
 
 
 
@@ -139,7 +143,7 @@ class Lap():
 		points_cart = []
 		for p in self.PointsFinal:
 			a = math.radians(p[0])
-			position = (int(p[1] * math.cos(a)), int(p[1] * math.sin(a)))
+			position = (p[1] * math.cos(a), p[1] * math.sin(a))
 			points_cart.append(position)
 		return points_cart
 

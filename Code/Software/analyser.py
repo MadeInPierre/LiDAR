@@ -4,50 +4,92 @@ class Analyser():
 	def __init(self):
 		pass
 
-	def FindLines(self, points, threshold = 0.99):
+	def FindWalls(self, points, tolerance = 12.0):
 		lines = [] # line is defined by it's first and last point
 		
 		i = 0
-		while i < len(points) - 4:
+		while i < len(points):
 			'''
 			TODO wrap around i = len and i = 0
+
 			Start with the 4 points after <p_i>.
-				- If a line is detected, try to see is there's still a line with the next 5 points.
+				- If a line is detected, try to see is there's still a line with the next 5 points. Reapeat the step.
 				- If not, the line is ended.
 			'''
-			# Searching = True
-			# FoundLine = False
-			# line_length = 4 # PARAM initial minimal line length
+			MIN_POINTS = 10 # start with 4 points minimum for a line
 
-			# while Searching:
-			# 	if self.FindLinearTrendline(points[i : i + line_length], threshold)[0] == True:
-			# 		FoundLine = True
-					
-			# 		if i + 1 < len(points):
-			# 			i += 1
-			# 	else:
-			# 		pass
+
+			line_length = MIN_POINTS
+			strength = 0 #from 0 to 1
 
 
 
+			Searching = True
+			while Searching:
+				if i + line_length < len(points):
+					strength = self.is_line(points[i : i + line_length], tolerance)
+					if strength > 0:
+						line_length += 1
+					else:
+						Searching = False
+				else:
+					line_length = len(points) - 1 - i
+					Searching = False
 
 
 
-			found_line = False
-			line_length = 4 
-			while self.FindLinearTrendline(points[i : i + line_length], threshold)[0] == True and i + line_length < len(points): #grow the line untile it isn't a line anymore
-				found_line = True
-				line_length += 1
-
-			if found_line:
-				line_length -= 1
-				lines.append((i, i + line_length))
-				i = i + line_length
+			if line_length > MIN_POINTS:
+				print "found line! from " + str(i) + " to " + str(i + line_length)
+				lines.append((i, i + line_length - 1, strength))
+				i += line_length
 			else:
 				i += 1
+
+
 		return lines
 
 
+	def is_line(self, points, tolerance = 12):
+		#returns a strength float score from 0 fo 1 (0 = no line)
+		#a, b = self.line_from_twopoints(points[0], points[-1])
+
+		for point in points:
+			dist_to_line = self.distance_point_to_line(point, points[0], points[-1])
+
+			if point[0] != 0 and point[1] != 0:
+				if dist_to_line > tolerance:
+					return 0
+		return 1
+
+	'''
+	def line_from_twopoints(self, p1, p2):
+		# y = ax + b
+
+		a = (p2[1] - p1[1]) / (p2[0] - p1[0])
+		b = p1[1] - a * p1[0]
+		return a, b
+
+	def distance_point_to_line(self, point, a, b):
+		# we are given a line defined by y = ax + b
+		# the formula we use needs cx + dy + e = 0 ==> -ax + y - b = 0
+		c = -a
+		d = 1
+		e = -b
+
+		# calculate the distance (https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line#Line_defined_by_an_equation)
+		distance = abs(c * point[0] + d * point[1] + e) / math.sqrt(c**2 + d**2)
+		return distance
+	'''
+
+	def distance_point_to_line(self, point, p1, p2):
+		# we are given a line defined by two points
+		# calculate the distance (https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line#Line_defined_by_an_equation)
+		return abs( (p2[1] - p1[1])*point[0] - (p2[0] - p1[0])*point[1] + p2[0]*p1[1] - p2[1]*p1[0]) / float(math.sqrt( (p2[1] - p1[1])**2 + (p2[0] - p1[0])**2))
+
+
+	'''
+	Deprecated :
+	'''
 	def FindLinearTrendline(self, points, threshold = 0.73):
 		try:
 			# implementation of https://www.youtube.com/watch?v=BeGKpJNCdf0
@@ -92,4 +134,3 @@ class Analyser():
 			return True if R2 > threshold else False, a, b, R2
 		except:
 			return None, None, None, None
-

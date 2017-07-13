@@ -97,7 +97,7 @@ class Renderer():
 		window.blit(range_text, (self.workable_area - range_text.get_width(), self.screencenter[1] - 23))		
 
 	def draw_lines(self, window, lap_stack, analyser):
-		lines = analyser.FindLines(lap_stack.getLastLap().getPointsCartesian())
+		lines = analyser.FindWalls(lap_stack.getLastLap().getPointsCartesian())
 		for line in lines:
 			pygame.draw.line(window, (255, 255, 255), self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[0]]), 
 													  self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[1]]))
