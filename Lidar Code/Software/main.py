@@ -41,7 +41,7 @@ logger.Start("out.dat")
 
 running = True
 while running:
-	serial_update = communication.updateSerial(lapsStack = lapsStack, logger = logger)
+	communication.updateSerial(lapsStack = lapsStack, logger = logger)
 	
 	events = pygame.event.get()
 	for event in events: # quitting the program

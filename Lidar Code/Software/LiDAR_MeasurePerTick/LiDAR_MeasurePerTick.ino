@@ -10,7 +10,7 @@ Send number 0-5 to control motor speed (0 = stop, 5 = full)
     - 1 : FAST.  1 degree  angular resolution, max 1.5Hz, +- 6cm
     - 2 : ULTRA. 2 degrees angular resolution, max 3.0Hz, +- 6cm 
 */
-#define MODE 1
+#define MODE 2
 
 int TICKS_PER_LAP = 0; //176 rising ticks per lap ==> 176 ticks if slow mode (detects only rising ticks), 354 otherwise (rising + falling)
 

@@ -1,0 +1,30 @@
+[
+	{
+		"caption": "Arduino",
+		"mnemonic": "A",
+		"id": "arduino",
+		"children":
+		[
+			{
+				"caption": "Serial Port",
+				"id": "stino_serial_port",
+				"children":
+				[
+					{
+						"caption": "Refresh",
+						"id": "stino_refresh_serials",
+						"command": "stino_refresh_serials"
+					},
+					{"caption": "-"},
+					{
+						"caption": "/dev/ttyS0",
+						"id": "stino_serial_/dev/ttyS0",
+						"command": "stino_select_serial",
+						"args": {"serial_port": "/dev/ttyS0"},
+						"checkbox": true
+					}
+				]
+			}
+		]
+	}
+]

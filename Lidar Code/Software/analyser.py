@@ -16,7 +16,7 @@ class Analyser():
 				- If a line is detected, try to see is there's still a line with the next 5 points. Reapeat the step.
 				- If not, the line is ended.
 			'''
-			MIN_POINTS = 10 # start with 4 points minimum for a line
+			MIN_POINTS = 6 # start with 4 points minimum for a line
 
 
 			line_length = MIN_POINTS
@@ -65,9 +65,9 @@ class Analyser():
 			elif dist_to_center < 100:
 				tol = 6
 			elif dist_to_center < 300:
-				tol = 14
-			elif dist_to_center < 500:
 				tol = 18
+			elif dist_to_center < 500:
+				tol = 22
 			elif dist_to_center < 1000:
 				tol = 34
 			elif dist_to_center < 40000:

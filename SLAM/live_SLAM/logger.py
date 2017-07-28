@@ -1,7 +1,7 @@
 
 
 class Logger():
-	def __init(self):
+	def __init__(self):
 		self.Logging = False
 
 	def Start(self, filename):
