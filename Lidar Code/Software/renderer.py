@@ -5,7 +5,6 @@ from analyser import *
 class Renderer():
 	def __init__(self, WindowRes):
 		self.WindowRes = WindowRes
-		self.PRECISION_LIMIT = 50
 
 		self.screencenter = (self.WindowRes[0] / 2, self.WindowRes[1] / 2)
 		self.workable_area = min(self.WindowRes[0] - 10, self.WindowRes[1] - 10)
@@ -75,7 +74,7 @@ class Renderer():
 			pos = self.pointPolarToMap(point)
 
 			color = (0, 60, 0)
-			if point[1] < self.PRECISION_LIMIT:
+			if point[1] < lap.PRECISION_LIMIT:
 				color = (60, 0, 0)
 
 			pygame.draw.line(window, color, self.screencenter, pos, 4)
@@ -84,7 +83,7 @@ class Renderer():
 			pos = self.pointPolarToMap(point)
 
 			color = (0, 255, 0)
-			if point[1] < self.PRECISION_LIMIT:
+			if point[1] < lap.PRECISION_LIMIT:
 				color = (140, 0, 0)
 
 			pygame.draw.circle(window, (color), pos, 3)
@@ -106,8 +105,9 @@ class Renderer():
 		window.blit(range_text, (self.workable_area - range_text.get_width(), self.screencenter[1] - 23))		
 
 	def draw_lines(self, window, lap_stack, analyser):
-		lines = analyser.FindWalls(lap_stack.getLastLap().getPointsCartesian())
+		lines = analyser.FindWalls(lap_stack.getLastLap().getPointsCartesian(), lap_stack.getPrecisionLimit())
 		for line in lines:
+			print line
 			pygame.draw.line(window, (255, 0, 0), self.pointCartesianToMap(line[0]), self.pointCartesianToMap(line[1]), 4)
 				#self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[0]]), 
 				#									  self.pointPolarToMap(lap_stack.getLastLap().getPointsPolar()[line[1]]))

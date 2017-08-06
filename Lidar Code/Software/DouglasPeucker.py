@@ -7,7 +7,7 @@ The purpose of the algorithm is, given a curve composed of line segments, to fin
 Tolerance controls how refined the result will be (low tolerance -> more lines)
 '''
 
-def DouglasPeucker(points, tolerance = 20):
+def DouglasPeucker(points, tolerance = 8):
 	dmax = 0.0
 	index = 0
 
@@ -18,13 +18,13 @@ def DouglasPeucker(points, tolerance = 20):
 			dmax = d
 
 	if dmax > tolerance:
-		recResults1 = DouglasPeucker(points[:index], tolerance)
-		recResults2 = DouglasPeucker(points[index:], tolerance)
+		recResults1 = DouglasPeucker(points[:index + 1], tolerance)
+		recResults2 = DouglasPeucker(points[index:]    , tolerance)
 
-		result = recResults1[:] + recResults2
+		result = recResults1 + recResults2
 	else:
-		result = [(points[0], points[-1])]
-	return result
+		result = [(points[0], points[-1], len(points))]
+	return result # returns a list of lines in format (p1, p2, num_points)
 
 
 
@@ -39,4 +39,4 @@ def distance_point_to_line(point, p1, p2):
 
 
 # test function
-#print DouglasPeucker([(0,0), (4,12), (8,0)])
+print DouglasPeucker([(0,0), (4,12), (8,0)])

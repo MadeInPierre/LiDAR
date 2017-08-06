@@ -1,5 +1,6 @@
 import pygame
 from renderer import Renderer
+import serial.tools.list_ports
 from serial_manager import *
 from analyser import *
 from logger import *
@@ -18,6 +19,16 @@ clock = pygame.time.Clock()
 WindowRes = (1600, 1600)
 window = pygame.display.set_mode(WindowRes)
 pygame.display.set_caption("LIDAR Cloud POV")
+
+#connect to lidar
+connection_port = ""
+available_ports = list(serial.tools.list_ports.comports())
+for p in available_ports:
+	if "Serial" in str(p):
+		connection_port = str(p).split(' ')[0]
+		break
+communication = SerialManager(connection_port, 500000)
+communication.openSerial()
 
 renderer = Renderer(WindowRes)
 try:

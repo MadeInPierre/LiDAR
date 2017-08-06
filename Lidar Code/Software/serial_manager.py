@@ -34,7 +34,7 @@ class SerialParser():
 
 			# Create a lap with this data
 			if abs(self.receiveError(lapsStack.getPointsPerLap(), points)) < lapsStack.getPointsPerLap() * 0.5: # discard the scan if there are too much or less points compared to the reference/resolution
-				lapsStack.NewLap(Lap(lap_count, points, points_per_lap = lapsStack.getPointsPerLap()), logger)
+				lapsStack.NewLap(Lap(lap_count, points, precision_limit = lapsStack.getPrecisionLimit(), points_per_lap = lapsStack.getPointsPerLap()), logger)
 			else:
 				print("[WARNING] Too many or too less points, discarted the lap.")
 		elif data[0] == 'L' and data[-1] != '\n':
@@ -67,6 +67,8 @@ class LapsStack():
 		self.CurrentLidarSpeed = 0
 		self.StartTime = time.time() * 1000
 
+		self.PRECISION_LIMIT = 50
+
 	def NewLap(self, lap, logger):
 		lap.LidarSpeed = self.CurrentLidarSpeed
 		lap.ReceivedTime = time.time() * 1000 - self.StartTime
@@ -95,12 +97,17 @@ class LapsStack():
 		else:
 			return 0
 
+	def getPrecisionLimit(self):
+		return self.PRECISION_LIMIT
+
 
 
 
 
 class Lap():
-	def __init__(self, lap_count, points, points_per_lap = -1):
+	def __init__(self, lap_count, points, precision_limit, points_per_lap = -1):
+		self.PRECISION_LIMIT = precision_limit
+
 		self.LapCount = lap_count
 		self.LidarSpeed = 0
 		self.POINTS_PER_LAP = points_per_lap
@@ -141,7 +148,9 @@ class Lap():
 
 	def getPointsPolar(self):
 		return self.PointsFinal
-	def getPointsCartesian(self):
+	def getPointsCartesian(self, override_points = None):
+		points = self.PointsFinal if override_points == None else override_points
+
 		points_cart = []
 		for p in self.PointsFinal:
 			a = math.radians(p[0])

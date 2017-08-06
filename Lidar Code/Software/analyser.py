@@ -1,10 +1,55 @@
 import math
+from DouglasPeucker import * # line finder function
 
 class Analyser():
 	def __init(self):
 		pass
 
-	def FindWalls(self, points):
+	def FindWalls(self, points, precision_limit):
+		print "finding walls"
+		TOLERANCE = 12.0
+		MIN_LENGTH = 6   # Min wall length in cm
+
+		lines = DouglasPeucker(points, tolerance = TOLERANCE) # reduce 
+
+		#remove lines that include points too close to lidar (poor precision)
+		lines = [line for line in lines if (self.distance_point_to_point((0,0), line[0]) >= precision_limit and \
+											self.distance_point_to_point((0,0), line[1]) >= precision_limit)]
+
+
+		result = []
+		for l in lines:
+			#wall_size = math.sqrt((l[1][1] - l[0][1])**2 + (l[1][0] - l[0][0])**2) # sqrt[ (yb - ya)^2 + (xb - xa)^2 ]
+			if l[2] >= MIN_LENGTH:
+				result.append(l)
+
+		return result
+
+
+
+
+
+
+
+
+		'''
+		>> THE CODE THAT FOLLOW IS USELESS. KEPT JUST IN CASE FOR NOW ONLY. <<
+		'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		lines = [] # line is defined by it's first and last point
 		
 		i = 0
@@ -102,6 +147,8 @@ class Analyser():
 		distance = abs(c * point[0] + d * point[1] + e) / math.sqrt(c**2 + d**2)
 		return distance
 	'''
+	def distance_point_to_point(self, p1, p2):
+		return math.sqrt((p2[1] - p1[1])**2 + (p2[0] - p1[0])**2) # sqrt[ (yb - ya)^2 + (xb - xa)^2 ]
 
 	def distance_point_to_line(self, point, p1, p2):
 		# we are given a line defined by two points
